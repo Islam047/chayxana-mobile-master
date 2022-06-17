@@ -332,7 +332,7 @@ class _SearchPageState<T> extends State<_SearchPage<T>> {
                   Padding(
                     padding: const EdgeInsets.only(top: 7),
                     child: Text(
-                      "region".tr,
+                      "profileCity".tr,
                       style: const TextStyle(
                         fontSize: 20,
                         color: AppColors.unSelectedTextColor,
@@ -368,7 +368,7 @@ class _SearchPageState<T> extends State<_SearchPage<T>> {
                       Icons.search,
                       color: AppColors.unSelectedTextColor,
                     ),
-                    hintText: "search_region".tr.trim(),
+                    hintText: "choose city".tr.trim(),
                     hintStyle: const TextStyle(
                       color: Color.fromRGBO(151, 151, 151, 1),
                     ),

@@ -1,11 +1,8 @@
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chayxana/services/const_service.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-
 import 'notification_controller.dart';
 
 class NotificationPage extends StatelessWidget {
@@ -68,8 +65,7 @@ class NotificationPage extends StatelessWidget {
                         controller.changeIndex(0);
                       },
                       child: Center(
-                        child: Text(
-                          "Новости",
+                        child: Text("news".tr,
                           textAlign: TextAlign.center,
                           style: AppFonts.poppinsBlackMedium(
                             color: AppColors.unSelectedTextColor,
@@ -79,8 +75,6 @@ class NotificationPage extends StatelessWidget {
                       ),
                     ),
                   ),
-
-
 
 
                   // #Title -> Сообщении
@@ -99,7 +93,7 @@ class NotificationPage extends StatelessWidget {
                       },
                       child: Center(
                         child: Text(
-                          "Сообщении",
+                          "message".tr,
                           textAlign: TextAlign.center,
                           style: AppFonts.poppinsBlackMedium(
                             color: AppColors.unSelectedTextColor,
@@ -146,7 +140,7 @@ class NotificationPage extends StatelessWidget {
                           ),
                         ),
                         child: Text(
-                          "Васток",
+                          "vastok".tr,
                           style: AppFonts.poppinsBlackSemiBold(
                             fontSize: 18,
                             color: AppColors.activeColor,
@@ -167,7 +161,7 @@ class NotificationPage extends StatelessWidget {
                           ),
                         ),
                         child: Text(
-                          "Ждем вас завтра в 19:00",
+                          "waiting tomorrow".tr,
                           style: AppFonts.poppinsBlackMedium(
                             fontSize: 16,
                             color: AppColors.unSelectedTextColor,
@@ -280,7 +274,7 @@ class NotificationPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(5),
               color: AppColors.colorsName,
             ),
-            child: Text("Васток",
+            child: Text("vastok".tr,
                 style: AppFonts.poppinsBlackSemiBold(
                   fontSize: 18,
                   color: AppColors.unSelectedTextColor,
@@ -304,7 +298,7 @@ class NotificationPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Ташкент",
+                Text("tashkent".tr,
                     style: AppFonts.poppinsBlackSemiBold(
                       fontSize: 16,
                       color: AppColors.unSelectedTextColor,
@@ -312,7 +306,7 @@ class NotificationPage extends StatelessWidget {
                 SizedBox(
                   height: Get.height / 89,
                 ),
-                Text("Юнусабадский район, Амир Темур",
+                Text("yunusabad".tr,
                     style: AppFonts.poppinsBlackMedium(
                       fontSize: 16,
                       color: AppColors.unSelectedTextColor,
@@ -320,7 +314,7 @@ class NotificationPage extends StatelessWidget {
                 SizedBox(
                   height: Get.height / 59,
                 ),
-                Text("Режим роботы",
+                Text("working mode".tr,
                     style: AppFonts.poppinsBlackSemiBold(
                       fontSize: 16,
                       color: AppColors.unSelectedTextColor,
@@ -328,7 +322,7 @@ class NotificationPage extends StatelessWidget {
                 SizedBox(
                   height: Get.height / 89,
                 ),
-                Text("Сегодгя 10:00 - 24:00",
+                Text("today".tr,
                     style: AppFonts.poppinsBlackMedium(
                       fontSize: 16,
                       color: AppColors.unSelectedTextColor,

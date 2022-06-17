@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:chayxana/pages/main/profile/profile_controller.dart';
 import 'package:chayxana/services/constants/app_assets.dart';
 import 'package:chayxana/services/constants/app_colors.dart';
@@ -106,9 +105,9 @@ class ProfilePage extends StatelessWidget {
                               onPressed: () {
                                 _showSearch(context);
                               },
-                              whatInfo: "Город",
+                              whatInfo: "profileCity".tr,
                               image: AppAssets.icLocation,
-                              additional: "Ташкент",
+                              additional: "tashkent".tr,
                             )),
                         const Divider(
                           height: 1,
@@ -120,7 +119,7 @@ class ProfilePage extends StatelessWidget {
                           onTap: () {},
                           child: PersonalInformation(
                             onPressed: () {},
-                            whatInfo: "Личная информация",
+                            whatInfo: "personal information".tr,
                             image: AppAssets.icEdit,
                             additional: "",
                           ),
@@ -133,7 +132,7 @@ class ProfilePage extends StatelessWidget {
                           onTap: () {},
                           child: PersonalInformation(
                             onPressed: () {},
-                            whatInfo: "Банковская карта",
+                            whatInfo: "bank card".tr,
                             image: AppAssets.icBankCard,
                             additional: "",
                           ),
@@ -157,7 +156,7 @@ class ProfilePage extends StatelessWidget {
                         InkWell(
                           child: PersonalInformation(
                             onPressed: () {},
-                            whatInfo: "Чат с поддержкой",
+                            whatInfo: "support chat".tr,
                             image: AppAssets.icSupport,
                             additional: "",
                           ),
@@ -173,7 +172,7 @@ class ProfilePage extends StatelessWidget {
                             onPressed: () {
                               controller.openDialog();
                             },
-                            whatInfo: "Вопросы и ответы",
+                            whatInfo: "questions and answers".tr,
                             image: AppAssets.icQuestions,
                             additional: "",
                           ),
@@ -205,7 +204,7 @@ class ProfilePage extends StatelessWidget {
                                 return controller.openIOSDialog();
                               }
                             },
-                            whatInfo: "Выйти",
+                            whatInfo: "exit".tr,
                             image: AppAssets.icExit,
                             additional: "",
                           ),

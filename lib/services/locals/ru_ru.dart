@@ -50,7 +50,7 @@ const Map<String, String> ruRU = {
   //language page
   "str_choose_lang": "Выберите язык",
 
-//setting_detail_page
+  //setting_detail_page
   "str_guests": "Гости",
   "str_people_count": "Число людей",
   "str_choose_date": "Выберите дату",
@@ -65,7 +65,42 @@ const Map<String, String> ruRU = {
   "phone_number": "Номер телефона",
   "using_application": "Используя приложение, вы принимаете условия в \n ",
   "agreements": "соглашения",
-  "information_messages":
-      " и соглашаетесь получать рекламные \n и информационные сообщения"
+  "information_messages": " и соглашаетесь получать рекламные \n и информационные сообщения",
 
+  // Notification page
+  "news":"Новости",
+  "message":"Сообщении",
+  "vastok":"Васток",
+  "tashkent":"Ташкент",
+  "yunusabad":"Юнусабадский район, Амир Темур",
+  "working mode":"Режим роботы",
+  "today":"Сегодгя 10:00 - 24:00",
+  "waiting today":"Ждем вас сегодгя в 19:00",
+  "waiting tomorrow":"Ждем вас завтра в 19:00",
+
+  // Profile page
+  "profileCity":"Город",
+  "personal information":"Личная информация",
+  "bank card":"Банковская карта",
+  "support chat":"Чат с поддержкой",
+  "questions and answers":"Вопросы и ответы",
+  "exit":"Выйти",
+  "cancel":"Да",
+  "ok":"нет",
+  "feedback":"Обратная сквязь",
+  "telegram":"Телеграм",
+  "instagram":"Инстаграм",
+  "facebook":"Фейсбук",
+  "choose city":"Выберите город",
+  "andijan":"Андижан",
+  "namangan":"Наманган",
+  "fargana":"Фаргана",
+  "sirdarya":"Сирдаря",
+  "jizzax":"Жиззах",
+  "samarkand":"Самарканд",
+  "bukhara":"Букхара",
+  "navaiy":"Наваий",
+  "kashkadarya":"Кашкадаря",
+  "kharazim":"Харазим",
+  "sukhandarya":"Сукхандаря",
 };

@@ -75,6 +75,44 @@ const Map<String, String> enUS = {
   "tv":"Tv",
   "parking":"parking",
   "verandas":"verandas",
-  "wifi":"Wi-Fi"
+  "wifi":"Wi-Fi",
+
+  // Notification page
+  "news":"News",
+  "message":"Message",
+  "vastok":"Vastok",
+  "tashkent":"Tashkent",
+  "yunusabad":"Yunusabad district, Amir Temur",
+  "working mode":"Working mode",
+  "today":"Today 10:00 - 24:00",
+  "waiting today":"We are waiting for you today at 19:00",
+  "waiting tomorrow":"We are waiting for you tomorrow at 19:00",
+
+  // Profile page
+  "profileCity":"City",
+  "personal information":"Personal information",
+  "bank card":"Bank card",
+  "support chat":"Support Chat",
+  "questions and answers":"Questions and answers",
+  "exit":"Exit",
+  "cancel":"Cancel",
+  "ok":"Ok",
+  "feedback":"Feedback",
+  "telegram":"Telegram",
+  "instagram":"Instagram",
+  "facebook":"Facebook",
+  "choose city":"Choose city",
+  "andijan":"Andijan",
+  "namangan":"Namangan",
+  "fargana":"Fergana",
+  "sirdarya":"Syrdarya",
+  "jizzax":"Jizzakh",
+  "samarkand":"Samarkand",
+  "bukhara":"Bukhara",
+  "navaiy":"Navaiy",
+  "kashkadarya":"Kashkadarya",
+  "kharazim":"Kharazim",
+  "sukhandarya":"Sukhandarya",
+
 };
 
