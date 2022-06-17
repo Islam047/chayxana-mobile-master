@@ -15,7 +15,6 @@ import 'package:chayxana/pages/main/profile/add_card/add_card_page.dart';
 import 'package:chayxana/pages/main/profile/faq/faq_page.dart';
 import 'package:chayxana/pages/main/profile/feedback/feedback_page.dart';
 import 'package:chayxana/pages/main/profile/profile_page.dart';
-import 'package:chayxana/pages/main/profile/region/region_page.dart';
 import 'package:chayxana/pages/sms_verification/sms_verification_page.dart';
 import 'package:chayxana/pages/splash/splash_page.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +52,7 @@ class MyApp extends StatelessWidget {
       title: 'Chayxana Mobile',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: const ProfilePage(),
+      home: const SplashPage(),
       // Localization
       translations: LangService(),
       locale: LangService.locale,
@@ -73,7 +72,6 @@ class MyApp extends StatelessWidget {
         ProfilePage.id: (context) => const ProfilePage(),
         FAQPage.id: (context) => const FAQPage(),
         FeedBackPage.id: (context) => const FeedBackPage(),
-        RegionPage.id: (context) => const RegionPage(),
         HistoryPage.id: (context) => const HistoryPage(),
         NotificationPage.id: (context) => const NotificationPage(),
         AuthPage.id: (context) => const AuthPage(),

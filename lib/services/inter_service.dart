@@ -7,13 +7,16 @@ class DioInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     LogService.o('REQUEST[${options.method}] => PATH: ${options.path}');
+    LogService.o('REQUEST[${options.method}] => PATH: ${options.queryParameters}');
+    LogService.o('REQUEST[${options.method}] => PATH: ${options.toString()}');
     return handler.next(options);
   }
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
     LogService.i('RESPONSE[${response.statusCode}] => PATH: ${response.requestOptions.path}');
-    LogService.i('RESPONSE[${response.statusCode}] => DATA: ${response.requestOptions.data}');
+    LogService.i('RESPONSE[${response.statusCode}] => PATH: ${response.requestOptions.queryParameters}');
+    LogService.i('RESPONSE[${response.statusCode}] => DATA: ${response.toString()}');
     return handler.resolve(response);
   }
 

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class RegionController extends GetxController {
-  List region = [
+  List<String> region = [
     "Tashkent",
     "Andijon",
     "Buxoro",

@@ -6,11 +6,21 @@ import 'package:chayxana/services/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../views/profile_list.dart';
+import '../../../views/search_view.dart';
+import 'region/region_page.dart';
 
 class ProfilePage extends StatelessWidget {
   static const String id = "/profile_page";
 
   const ProfilePage({Key? key}) : super(key: key);
+
+  // #openRegionPage
+  void _showSearch(BuildContext context) {
+    showSearchCustom(
+      context: context,
+      delegate: RegionPage(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,14 +55,13 @@ class ProfilePage extends StatelessWidget {
                             width: Get.width / 3.76,
                             height: Get.height / 8.14,
                             decoration: const BoxDecoration(
-
-
-
                               image: DecorationImage(
-                             invertColors: true,
-                              image: AssetImage(AppAssets.addPhotoIC,),
-
-                            ),),
+                                invertColors: true,
+                                image: AssetImage(
+                                  AppAssets.addPhotoIC,
+                                ),
+                              ),
+                            ),
                             child: InkWell(
                               onTap: () {},
                             ),
@@ -61,10 +70,11 @@ class ProfilePage extends StatelessWidget {
                         SizedBox(
                           height: Get.height / 14.9,
                         ),
-
-                        const Text(
-                          "Абдуллох",
-                          style: TextStyle(
+                        Text(
+                          controller.user != null
+                              ? controller.user!.fullName!
+                              : "",
+                          style: const TextStyle(
                             color: AppColors.unSelectedTextColor,
                             fontWeight: FontWeight.w600,
                             fontSize: 26,
@@ -93,7 +103,9 @@ class ProfilePage extends StatelessWidget {
                         InkWell(
                             onTap: () {},
                             child: PersonalInformation(
-                              onPressed: () {},
+                              onPressed: () {
+                                _showSearch(context);
+                              },
                               whatInfo: "Город",
                               image: AppAssets.icLocation,
                               additional: "Ташкент",
@@ -144,9 +156,7 @@ class ProfilePage extends StatelessWidget {
                         /// help center
                         InkWell(
                           child: PersonalInformation(
-                            onPressed: () {
-
-                            },
+                            onPressed: () {},
                             whatInfo: "Чат с поддержкой",
                             image: AppAssets.icSupport,
                             additional: "",
@@ -189,12 +199,11 @@ class ProfilePage extends StatelessWidget {
                           onTap: () {},
                           child: PersonalInformation(
                             onPressed: () {
-                              if(Platform.isAndroid){
+                              if (Platform.isAndroid) {
                                 return controller.openAndroidDialog();
-                              }else{
+                              } else {
                                 return controller.openIOSDialog();
                               }
-
                             },
                             whatInfo: "Выйти",
                             image: AppAssets.icExit,

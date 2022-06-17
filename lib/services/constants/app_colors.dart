@@ -66,8 +66,14 @@ class AppColors {
     Colors.black.withOpacity(0.7),
     Colors.black.withOpacity(0.1)
   ];
+  ///  colorsTransparent
+  static const Color colorsTransparent = Colors.transparent;
 
+  ///  colorsTransparent
+  static const Color colorsName = Color(0xFFE9E9E9
+  );
   static Color colorScafoldBack = const Color(0xffEDEDED);
   /// color: dialog
   static const Color dialogColor = Color(0xFF1181FF);
+  static Color colorRegionBackground = const Color(0xFFF7F7F7);
 }

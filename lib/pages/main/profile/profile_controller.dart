@@ -1,12 +1,38 @@
 
+import 'dart:convert';
 
+import 'package:chayxana/models/api_model.dart';
 import 'package:chayxana/services/const_service.dart';
+import 'package:chayxana/services/dio_service.dart';
+import 'package:chayxana/services/util_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
-  openDialog() {
+
+  User? user;
+
+  @override
+  onInit() {
+    super.onInit();
+    _apiGetUser();
+  }
+
+  void _apiGetUser() async {
+      var response = await NetworkService.GET(NetworkService.API_MY_DATA, NetworkService.paramsUser("c73ebcd8-09b3-4820-b9ef-e670b7cb858f"));
+
+      if(response == null) {
+        Utils.fireSnackGetX("Something error!");
+        return;
+      }
+
+      Map<String, dynamic> json = jsonDecode(response);
+      user = User.fromJson(json["object"]);
+      update();
+  }
+
+  Future openDialog() {
     return Get.bottomSheet(
       Container(
         padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
