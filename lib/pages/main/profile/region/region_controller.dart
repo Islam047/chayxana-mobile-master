@@ -9,19 +9,19 @@ import '../../../../services/util_service.dart';
 class RegionController extends GetxController {
   RegionDto? regionDto;
   List<String> region = [
-    "Tashkent",
-    "Andijon",
-    "Buxoro",
-    "Guliston",
-    "Jizzah",
-    "Samarqand",
-    "Namangan",
-    "Farg'ona",
-    "Xorazm",
-    "Qashqadaryo",
-    "Surxandaryo",
-    "Navoiy",
-    "Qoraqalpog'iston"
+    "tashkent".tr,
+    "andijan".tr,
+    "Buxoro".tr,
+    "Guliston".tr,
+    "Jizzah".tr,
+    "Samarqand".tr,
+    "Namangan".tr,
+    "Farg'ona".tr,
+    "Xorazm".tr,
+    "Qashqadaryo".tr,
+    "Surxandaryo".tr,
+    "Navoiy".tr,
+    "Qoraqalpog'iston".tr,
   ];
   late Widget dividerChecker;
 

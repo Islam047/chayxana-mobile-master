@@ -30,14 +30,13 @@ Future<void> main() async {
 
   await InitService.init();
 
-  LangService.changeLocale("ru");
+  LangService.changeLocale("en");
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       // statusBarBrightness: Brightness.light,
       statusBarIconBrightness: Brightness.dark));
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then(
-    (_) {
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_) {
       runApp(const MyApp());
     },
   );
@@ -52,7 +51,7 @@ class MyApp extends StatelessWidget {
       title: 'Chayxana Mobile',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: const SplashPage(),
+      home: const ProfilePage(),
       // Localization
       translations: LangService(),
       locale: LangService.locale,
@@ -81,6 +80,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
 
 
 

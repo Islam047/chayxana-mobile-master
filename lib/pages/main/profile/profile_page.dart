@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:chayxana/pages/main/profile/profile_controller.dart';
 import 'package:chayxana/services/constants/app_assets.dart';
 import 'package:chayxana/services/constants/app_colors.dart';
@@ -101,13 +100,14 @@ class ProfilePage extends StatelessWidget {
                       children: [
                         ///location
                         InkWell(
-                            onTap: () {
-                              _showSearch(context);
-                            },
+                            onTap: () {},
                             child: PersonalInformation(
-                              whatInfo: "Город",
+                              onPressed: () {
+                                _showSearch(context);
+                              },
+                              whatInfo: "profileCity".tr,
                               image: AppAssets.icLocation,
-                              additional: "Ташкент",
+                              additional: "tashkent".tr,
                             )),
                         const Divider(
                           height: 1,
@@ -118,7 +118,8 @@ class ProfilePage extends StatelessWidget {
                         InkWell(
                           onTap: () {},
                           child: PersonalInformation(
-                            whatInfo: "Личная информация",
+                            onPressed: () {},
+                            whatInfo: "personal information".tr,
                             image: AppAssets.icEdit,
                             additional: "",
                           ),
@@ -130,7 +131,8 @@ class ProfilePage extends StatelessWidget {
                         InkWell(
                           onTap: () {},
                           child: PersonalInformation(
-                            whatInfo: "Банковская карта",
+                            onPressed: () {},
+                            whatInfo: "bank card".tr,
                             image: AppAssets.icBankCard,
                             additional: "",
                           ),
@@ -153,7 +155,8 @@ class ProfilePage extends StatelessWidget {
                         /// help center
                         InkWell(
                           child: PersonalInformation(
-                            whatInfo: "Чат с поддержкой",
+                            onPressed: () {},
+                            whatInfo: "support chat".tr,
                             image: AppAssets.icSupport,
                             additional: "",
                           ),
@@ -163,12 +166,13 @@ class ProfilePage extends StatelessWidget {
 
                         /// question and answer
                         InkWell(
-                          onTap: () {
-                            controller.openDialog();
-                          },
+                          onTap: () {},
                           focusColor: Colors.grey,
                           child: PersonalInformation(
-                            whatInfo: "Вопросы и ответы",
+                            onPressed: () {
+                              controller.openDialog();
+                            },
+                            whatInfo: "questions and answers".tr,
                             image: AppAssets.icQuestions,
                             additional: "",
                           ),
@@ -191,11 +195,16 @@ class ProfilePage extends StatelessWidget {
                       children: [
                         /// leave
                         InkWell(
-                          onTap: () {
-                            controller.showMobileDialogue();
-                          },
+                          onTap: () {},
                           child: PersonalInformation(
-                            whatInfo: "Выйти",
+                            onPressed: () {
+                              if (Platform.isAndroid) {
+                                return controller.openAndroidDialog();
+                              } else {
+                                return controller.openIOSDialog();
+                              }
+                            },
+                            whatInfo: "exit".tr,
                             image: AppAssets.icExit,
                             additional: "",
                           ),

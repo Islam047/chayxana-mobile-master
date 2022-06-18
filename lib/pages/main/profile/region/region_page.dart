@@ -1,7 +1,6 @@
 import 'package:chayxana/services/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../views/search_view.dart';
 import 'region_controller.dart';
 
@@ -12,7 +11,7 @@ class RegionPage extends SearchDelegateCustom {
 
   RegionPage({Key? key})
       : super(
-    searchFieldLabel: "region".tr,
+    searchFieldLabel: "profileCity".tr,
     searchFieldDecorationTheme: const InputDecorationTheme(
       floatingLabelBehavior: FloatingLabelBehavior.always,
     ),

@@ -17,10 +17,10 @@ class ProfileController extends GetxController {
   @override
   onInit() {
     super.onInit();
-    _apiGetUser();
+    apiGetUser();
   }
 
-  void _apiGetUser() async {
+  void apiGetUser() async {
       var response = await NetworkService.GET(NetworkService.API_MY_DATA, NetworkService.paramsUser("c73ebcd8-09b3-4820-b9ef-e670b7cb858f"));
 
       if(response == null) {
@@ -53,7 +53,7 @@ class ProfileController extends GetxController {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-                "Обратная сквязь",
+                "feedback".tr,
                 style: AppFonts.poppinsBlackMedium(
                     fontSize: 20, color: AppColors.unSelectedTextColor),
               ),
@@ -62,7 +62,7 @@ class ProfileController extends GetxController {
                 color: AppColors.borderColor,
               ),
               Text(
-                "Telegram",
+                "telegram".tr,
                 style: AppFonts.poppinsMediumChat(),
               ),
               const Divider(
@@ -70,7 +70,7 @@ class ProfileController extends GetxController {
                 color: AppColors.borderColor,
               ),
               Text(
-                "Instagram",
+                "instagram".tr,
                 style: AppFonts.poppinsMediumChat(),
               ),
               const Divider(
@@ -78,7 +78,7 @@ class ProfileController extends GetxController {
                 color: AppColors.borderColor,
               ),
               Text(
-                "Facebook",
+                "facebook".tr,
                 style: AppFonts.poppinsMediumChat(),
               ),
             ],
@@ -97,7 +97,7 @@ class ProfileController extends GetxController {
         height: 1,
       ),
       title: Text(
-        'Выйти',
+        'exit'.tr,
         style: AppFonts.poppinsBlackSemiBold(
           fontSize: 22,
         ),
@@ -110,7 +110,7 @@ class ProfileController extends GetxController {
             Get.back();
           },
           child: Text(
-            'Cancel',
+            'cancel'.tr,
             style: AppFonts.poppinsBlackMedium(
               fontSize: 18,
               color: AppColors.dialogColor,
@@ -124,7 +124,7 @@ class ProfileController extends GetxController {
             Get.back();
           },
           child: Text(
-            'Ok',
+            'ok'.tr,
             style: AppFonts.poppinsBlackMedium(
               fontSize: 18,
               color: AppColors.dialogColor,
@@ -140,7 +140,7 @@ class ProfileController extends GetxController {
     Get.dialog(
       CupertinoAlertDialog(
         title: Text(
-          "Выйти",
+          "exit".tr,
           style: AppFonts.poppinsBlackSemiBold(
             fontSize: 22,
           ),
@@ -148,7 +148,7 @@ class ProfileController extends GetxController {
         actions: [
           CupertinoDialogAction(
               child: Text(
-                "Cancel",
+                "cancel".tr,
                 style: AppFonts.poppinsBlackMedium(
                   fontSize: 18,
                   color: AppColors.dialogColor,
@@ -162,7 +162,7 @@ class ProfileController extends GetxController {
               }),
           CupertinoDialogAction(
               child: Text(
-                "Ok",
+                "ok".tr,
                 style: AppFonts.poppinsBlackMedium(
                   fontSize: 18,
                   color: AppColors.dialogColor,
