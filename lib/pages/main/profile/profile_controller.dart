@@ -1,5 +1,6 @@
 
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:chayxana/models/api_model.dart';
 import 'package:chayxana/services/const_service.dart';
@@ -31,7 +32,7 @@ class ProfileController extends GetxController {
       user = User.fromJson(json["object"]);
       update();
   }
-
+// #opensBottomSheet
   Future openDialog() {
     return Get.bottomSheet(
       Container(
@@ -86,6 +87,7 @@ class ProfileController extends GetxController {
       ),
     );
   }
+// #opensAndroidDialogue
 
   void openAndroidDialog() {
     Get.dialog(AlertDialog(
@@ -132,6 +134,7 @@ class ProfileController extends GetxController {
       ],
     ));
   }
+// #opensIosDialogue
 
   void openIOSDialog() {
     Get.dialog(
@@ -172,5 +175,13 @@ class ProfileController extends GetxController {
         ],
       ),
     );
+  }
+
+  void showMobileDialogue(){
+    if (Platform.isAndroid) {
+      return openAndroidDialog();
+    } else {
+      return openIOSDialog();
+    }
   }
 }

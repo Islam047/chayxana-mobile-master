@@ -10,7 +10,11 @@ class NetworkService {
   static String SERVER_PRODUCTION = "62.109.0.156:8085";
 
   /* Dio Apis */
+
   static String API_HISTORY_LIST = "/api/v1/mobile/order/orders/by/userId/";
+
+  static String API_PROFILE_REGION = "/api/v1/mobile/region";
+
   static String API_DELETE = "/photos/"; //{id}
   static String API_CHAYXANALAR = "/api/v1/mobile/chayxana/address";
   static String API_PROFILE_IMAGE_FROM_ID = "/api/v1/mobile/chayxana/getMainPicOfChayxana/"; //{id}
@@ -40,7 +44,7 @@ class NetworkService {
   }
 
   /* Http Requests */
-  static Future<String?> GET(String api, Map<String, dynamic> params) async {
+    static Future<String?> GET(String api, Map<String, dynamic> params) async {
     var uri = Uri.http(getServer(), api, params); // http or https
     var response = await get(uri, headers: getHeaders());
     LogService.wtf("Api: $api;\nResponse: ${response.body}");
@@ -81,8 +85,8 @@ class NetworkService {
     return null;
   }
 
-  static Future<String?> PUT(String api, Map<String, String> params, Map<String, String> body) async {
-    var uri = Uri.https(getServer(), api, params);
+  static Future<String?> PUT(String api, Map<String, dynamic> params, Map<String, dynamic> body) async {
+    var uri = Uri.http(getServer(), api, params);
     Response response = await put(uri, headers: getHeaders(), body: jsonEncode(body));
     LogService.wtf("Api: $api;\nResponse: ${response.body}");
     if(response.statusCode == 200) {
@@ -120,6 +124,7 @@ class NetworkService {
       params.addAll({'id': id});
       return params;
     }
+
 //
 // static Map<String, dynamic> paramsSearch(String search, int pageNumber) {
 //   Map<String, String> params = {};

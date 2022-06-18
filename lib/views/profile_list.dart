@@ -5,8 +5,8 @@ class PersonalInformation extends StatelessWidget {
   String? whatInfo;
   String? image;
   String? additional;
-  Function onPressed;
-   PersonalInformation({required this.onPressed, this.whatInfo,this.image,this.additional,Key? key}) : super(key: key);
+
+   PersonalInformation({ this.whatInfo,this.image,this.additional,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class PersonalInformation extends StatelessWidget {
               IconButton(
 
                 icon: Image.asset(image!), onPressed:() {
-                onPressed();
+
               },
               )
             ],

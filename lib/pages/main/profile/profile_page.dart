@@ -101,11 +101,10 @@ class ProfilePage extends StatelessWidget {
                       children: [
                         ///location
                         InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              _showSearch(context);
+                            },
                             child: PersonalInformation(
-                              onPressed: () {
-                                _showSearch(context);
-                              },
                               whatInfo: "Город",
                               image: AppAssets.icLocation,
                               additional: "Ташкент",
@@ -119,7 +118,6 @@ class ProfilePage extends StatelessWidget {
                         InkWell(
                           onTap: () {},
                           child: PersonalInformation(
-                            onPressed: () {},
                             whatInfo: "Личная информация",
                             image: AppAssets.icEdit,
                             additional: "",
@@ -132,7 +130,6 @@ class ProfilePage extends StatelessWidget {
                         InkWell(
                           onTap: () {},
                           child: PersonalInformation(
-                            onPressed: () {},
                             whatInfo: "Банковская карта",
                             image: AppAssets.icBankCard,
                             additional: "",
@@ -156,7 +153,6 @@ class ProfilePage extends StatelessWidget {
                         /// help center
                         InkWell(
                           child: PersonalInformation(
-                            onPressed: () {},
                             whatInfo: "Чат с поддержкой",
                             image: AppAssets.icSupport,
                             additional: "",
@@ -167,12 +163,11 @@ class ProfilePage extends StatelessWidget {
 
                         /// question and answer
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            controller.openDialog();
+                          },
                           focusColor: Colors.grey,
                           child: PersonalInformation(
-                            onPressed: () {
-                              controller.openDialog();
-                            },
                             whatInfo: "Вопросы и ответы",
                             image: AppAssets.icQuestions,
                             additional: "",
@@ -196,15 +191,10 @@ class ProfilePage extends StatelessWidget {
                       children: [
                         /// leave
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            controller.showMobileDialogue();
+                          },
                           child: PersonalInformation(
-                            onPressed: () {
-                              if (Platform.isAndroid) {
-                                return controller.openAndroidDialog();
-                              } else {
-                                return controller.openIOSDialog();
-                              }
-                            },
                             whatInfo: "Выйти",
                             image: AppAssets.icExit,
                             additional: "",

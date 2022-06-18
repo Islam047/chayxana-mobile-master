@@ -7,6 +7,7 @@ import 'region_controller.dart';
 
 // #region_page
 class RegionPage extends SearchDelegateCustom {
+
   static const String id = "/region_page";
 
   RegionPage({Key? key})
