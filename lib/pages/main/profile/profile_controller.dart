@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:chayxana/models/api_model.dart';
+import 'package:chayxana/pages/main/profile/region/region_controller.dart';
 import 'package:chayxana/services/const_service.dart';
 import 'package:chayxana/services/dio_service.dart';
 import 'package:chayxana/services/util_service.dart';
@@ -18,6 +19,7 @@ class ProfileController extends GetxController {
   onInit() {
     super.onInit();
     apiGetUser();
+    Get.find<RegionController>().apiGetRegion();
   }
 
   void apiGetUser() async {

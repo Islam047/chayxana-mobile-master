@@ -1,3 +1,4 @@
+import 'package:chayxana/pages/main/profile/profile_page.dart';
 import 'package:chayxana/services/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,18 +17,6 @@ class RegionPage extends SearchDelegateCustom {
       floatingLabelBehavior: FloatingLabelBehavior.always,
     ),
   );
-
-  // #results
-  @override
-  Widget buildResults(BuildContext context) {
-    appBarTheme(context);
-    return Center(
-      child: Text(
-        query,
-        style: const TextStyle(fontSize: 64, fontWeight: FontWeight.bold),
-      ),
-    );
-  }
 
   // #regions
   @override
@@ -70,8 +59,13 @@ class RegionPage extends SearchDelegateCustom {
                   ),
                 ],
               ),
-              onTap: () {
+              onTap: () async {
+
                 query = suggestion;
+
+                await  Get.find<RegionController>().apiPUTRegion(suggestion);
+                Navigator.pop(context);
+
               },
             ),
           );

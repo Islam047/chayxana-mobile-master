@@ -1,13 +1,12 @@
 import 'dart:convert';
 import 'package:chayxana/models/regionDtoModel.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../../../../services/dio_service.dart';
 import '../../../../services/util_service.dart';
 
 class RegionController extends GetxController {
-  RegionDto? regionDto;
+  RegionDto regionDto = RegionDto(id: 1, name: '');
   List<String> region = [
     "tashkent".tr,
     "andijan".tr,
@@ -23,7 +22,11 @@ class RegionController extends GetxController {
     "Navoiy".tr,
     "Qoraqalpog'iston".tr,
   ];
-  late Widget dividerChecker;
+
+   String? regionName() {
+    update();
+    return regionDto.name;
+  }
 
   @override
   void onInit() {
@@ -31,7 +34,7 @@ class RegionController extends GetxController {
     apiGetRegion();
   }
 
-  static Future<void> apiGetRegion() async {
+   Future<void> apiGetRegion() async {
     var response = await NetworkService.GET(NetworkService.API_PROFILE_REGION,
         NetworkService.paramsUser("3fa85f64-5717-4562-b3fc-2c963f66afa6"));
 
@@ -40,15 +43,15 @@ class RegionController extends GetxController {
       return;
     }
 
-    Map<String, dynamic> json = jsonDecode(response);
+    Map<String, dynamic> json = await jsonDecode(response);
 
-    RegionDto regionDto = RegionDto.fromJson(json['object'][0]);
+    regionDto = RegionDto.fromJson(json['object'][0]);
   }
 
-  static Future<void> apiPUTRegion() async {
-    RegionDto regionDto = RegionDto(id: 1, name: 'Imomboy lee');
-    var response = NetworkService.PUT(NetworkService.API_PROFILE_REGION,
+   Future<void> apiPUTRegion(String regionName) async {
+    regionDto.name = regionName;
+    await NetworkService.PUT(NetworkService.API_PROFILE_REGION,
         NetworkService.paramsUser('1'), regionDto.toJson());
-    print(response);
+    update();
   }
 }

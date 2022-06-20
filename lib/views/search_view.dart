@@ -28,7 +28,7 @@ abstract class SearchDelegateCustom<T> {
 
   Widget buildSuggestions(BuildContext context);
 
-  Widget buildResults(BuildContext context);
+// Widget buildResults(BuildContext context);
 
   PreferredSizeWidget? buildBottom(BuildContext context) => null;
 
@@ -67,7 +67,7 @@ abstract class SearchDelegateCustom<T> {
 
   void showSuggestions(BuildContext context) {
     assert(_focusNode != null,
-    '_focusNode must be set by route before showSuggestions is called.');
+        '_focusNode must be set by route before showSuggestions is called.');
     _focusNode!.requestFocus();
     _currentBody = _SearchBody.suggestions;
   }
@@ -97,10 +97,10 @@ abstract class SearchDelegateCustom<T> {
   final TextEditingController _queryTextController = TextEditingController();
 
   final ProxyAnimation _proxyAnimation =
-  ProxyAnimation(kAlwaysDismissedAnimation);
+      ProxyAnimation(kAlwaysDismissedAnimation);
 
   final ValueNotifier<_SearchBody?> _currentBodyNotifier =
-  ValueNotifier<_SearchBody?>(null);
+      ValueNotifier<_SearchBody?>(null);
 
   _SearchBody? get _currentBody => _currentBodyNotifier.value;
 
@@ -121,10 +121,10 @@ class _SearchPageRoute<T> extends PageRoute<T> {
     required this.delegate,
   }) {
     assert(
-    delegate._route == null,
-    'The ${delegate.runtimeType} instance is currently used by another active '
-        'search. Please close that search by calling close() on the SearchDelegateCustom '
-        'before opening another search with the same delegate instance.',
+      delegate._route == null,
+      'The ${delegate.runtimeType} instance is currently used by another active '
+      'search. Please close that search by calling close() on the SearchDelegateCustom '
+      'before opening another search with the same delegate instance.',
     );
     delegate._route = this;
   }
@@ -145,11 +145,11 @@ class _SearchPageRoute<T> extends PageRoute<T> {
 
   @override
   Widget buildTransitions(
-      BuildContext context,
-      Animation<double> animation,
-      Animation<double> secondaryAnimation,
-      Widget child,
-      ) {
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) {
     return FadeTransition(
       opacity: animation,
       child: child,
@@ -165,10 +165,10 @@ class _SearchPageRoute<T> extends PageRoute<T> {
 
   @override
   Widget buildPage(
-      BuildContext context,
-      Animation<double> animation,
-      Animation<double> secondaryAnimation,
-      ) {
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+  ) {
     return _SearchPage<T>(
       delegate: delegate,
       animation: animation,
@@ -198,8 +198,6 @@ class _SearchPage<T> extends StatefulWidget {
 }
 
 class _SearchPageState<T> extends State<_SearchPage<T>> {
-  // This node is owned, but not hosted by, the search page. Hosting is done by
-  // the text field.
   FocusNode focusNode = FocusNode();
 
   @override
@@ -255,13 +253,13 @@ class _SearchPageState<T> extends State<_SearchPage<T>> {
 
   void _onQueryChanged() {
     setState(() {
-      // rebuild ourselves because query changed.
+// rebuild ourselves because query changed.
     });
   }
 
   void _onSearchBodyChanged() {
     setState(() {
-      // rebuild ourselves because search body changed.
+// rebuild ourselves because search body changed.
     });
   }
 
@@ -282,7 +280,7 @@ class _SearchPageState<T> extends State<_SearchPage<T>> {
       case _SearchBody.results:
         body = KeyedSubtree(
           key: const ValueKey<_SearchBody>(_SearchBody.results),
-          child: widget.delegate.buildResults(context),
+          child: widget.delegate.buildSuggestions(context),
         );
         break;
       case null:
