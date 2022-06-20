@@ -1,18 +1,15 @@
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chayxana/services/const_service.dart';
-
+import 'package:chayxana/views/notification_widget_location.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../../../views/notification_message.dart';
-import '../../../../views/notification_widget_location.dart';
 import 'notification_controller.dart';
 
 class NotificationPage extends StatelessWidget {
   static const String id = "/notification_page";
-
 
   const NotificationPage({Key? key}) : super(key: key);
 
@@ -25,19 +22,18 @@ class NotificationPage extends StatelessWidget {
           backgroundColor: AppColors.backgroundColor,
           appBar: AppBar(
             toolbarHeight: Get.height / 8.96,
-            backgroundColor: AppColors.activeColor,
+            backgroundColor: AppColors.backgroundColor,
             elevation: 0.0,
             centerTitle: true,
             // #NavigatorBack
-            leading: CircleAvatar(
-              radius: 24,
-              backgroundColor: AppColors.colorsTransparent,
-              child: InkWell(
-                onTap: (){
-                  controller.openHistoryPage();
-                },
-                splashColor: Colors.green,
-                child:  SvgPicture.asset(
+            leading: GestureDetector(
+              onTap: () {
+                controller.openHistoryPage();
+              },
+              child: CircleAvatar(
+                radius: 24,
+                backgroundColor: AppColors.colorsTransparent,
+                child: SvgPicture.asset(
                   AppAssets.arrowBackIC,
                   fit: BoxFit.cover,
                   color: AppColors.iconofService,
@@ -47,14 +43,13 @@ class NotificationPage extends StatelessWidget {
               ),
             ),
 
-
             // #NavigationTitleAppBar
             title: Container(
               height: 40,
               width: 218,
               padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
-                color: AppColors.btnColor,
+                color: AppColors.grey.withOpacity(0.3),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Row(
@@ -130,15 +125,20 @@ class NotificationPage extends StatelessWidget {
               ListView.builder(
                   physics: const BouncingScrollPhysics(),
                   itemCount: controller.favoriteList.length,
-
                   itemBuilder: (BuildContext context, index) {
-                    return  NotificationLocationWidget(function: (){
-                      controller.selectedLike(index);
-                    }, item: controller.favoriteList[index],) ;
+                    return NotificationLocationWidget(
+                      function: () {
+                        controller.selectedLike(index);
+                      },
+                      item: controller.favoriteList[index],
+                    );
                   }),
-              ListView.builder(itemBuilder: (BuildContext context, index) {
-                return const NotificationMessageWidget();
-              })
+              ListView.builder(
+                  itemCount: 10,
+                  physics: const BouncingScrollPhysics(),
+                  itemBuilder: (BuildContext context, index) {
+                    return const NotificationMessageWidget();
+                  })
             ],
           ),
         );

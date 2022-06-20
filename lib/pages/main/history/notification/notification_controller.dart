@@ -3,10 +3,11 @@ import 'package:chayxana/pages/main/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../models/item.dart';
+import '../../../../models/Item.dart';
 import '../../../../services/util_service.dart';
 
 class NotificationController extends GetxController {
+  // #listOfLikes
   List<Item>  favoriteList =[
     Item(selectLike: true, ),
     Item(selectLike: false, ),
@@ -16,17 +17,14 @@ class NotificationController extends GetxController {
     Item(selectLike: true, ),
   ];
 
-
-
-
-  selectedLike(int index){
+  // #likes
+  void selectedLike(int index){
     favoriteList[index].selectLike = !favoriteList[index].selectLike;
     update();
 
   }
 
 
-  /// #Doniyor
   PageController pageController = PageController(
     initialPage: 0,
     keepPage: true,

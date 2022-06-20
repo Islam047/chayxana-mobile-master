@@ -1,5 +1,4 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,16 +8,14 @@ import '../services/constants/app_fonts.dart';
 class NotificationMessageWidget extends StatelessWidget {
   const NotificationMessageWidget({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 100,
       width: double.infinity,
-      margin: const EdgeInsets.all(15),
+      margin: const EdgeInsets.only(right: 15, left: 15, bottom: 15),
       child: Column(
         children: [
-
           // #СообщенииPage -> Title1
           Container(
             padding: const EdgeInsets.only(left: 15),
@@ -65,6 +62,4 @@ class NotificationMessageWidget extends StatelessWidget {
       ),
     );
   }
-
-
 }
