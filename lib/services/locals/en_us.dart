@@ -59,7 +59,7 @@ const Map<String, String> enUS = {
   "str_room": "Room",
   "str_price": "Price",
 
-  ///detailPage
+  // detailPage
   "location_of_city": "Location",
   "region_locatin":"Amir tumer region",
   "city":"Tashkent",
@@ -113,6 +113,8 @@ const Map<String, String> enUS = {
   "kashkadarya":"Kashkadarya",
   "kharazim":"Kharazim",
   "sukhandarya":"Sukhandarya",
+  "karakalpaq":"Karakalpagistan",
+  "gulistan":"Gulistan",
 
 };
 

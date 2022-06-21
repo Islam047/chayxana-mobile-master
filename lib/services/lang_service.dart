@@ -16,9 +16,9 @@ class LangService extends Translations {
   static const fallbackLocale = Locale('en', 'US');
 
   static final items = [
-    'English',
-    'Русский',
-    'O\'zbekcha',
+    "English",
+    "Русский",
+    "O'zbekcha",
   ];
 
   static final langs = [

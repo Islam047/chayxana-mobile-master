@@ -95,5 +95,6 @@ const Map<String, String> uzUZ = {
   "kashkadarya":"Qashqadaryo",
   "kharazim":"Xorazm",
   "sukhandarya":"Surxondaryo",
-
+  "karakalpaq":"Qoraqalpog'iston",
+  "gulistan":"Guliston",
 };
