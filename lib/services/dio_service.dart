@@ -10,18 +10,17 @@ class NetworkService {
   static String SERVER_PRODUCTION = "62.109.0.156:8085";
 
   /* Dio Apis */
-
   static String API_HISTORY_LIST = "/api/v1/mobile/order/orders/by/userId/";
 
   static String API_PROFILE_REGION = "/api/v1/mobile/region";
 
   static String API_DELETE = "/photos/"; //{id}
   static String API_CHAYXANALAR = "/api/v1/mobile/chayxana/address";
-  static String API_PROFILE_IMAGE_FROM_ID = "/api/v1/mobile/chayxana/getMainPicOfChayxana/"; //{id}
+  static String API_PROFILE_IMAGE_FROM_ID =
+      "/api/v1/mobile/chayxana/getMainPicOfChayxana/"; //{id}
   static String API_PROFILE_ICON_FROM_ID = "/api/v1/mobile/icon/"; //id
   static String API_PROFILE_RATE_FROM_ID = "/api/v1/rate/{id}?id="; //!id
   static String API_MY_DATA = '/api/v1/mobile/user/getUserById';
-
 
   static Map<String, String> getHeaders() {
     Map<String, String> headers = {
@@ -32,9 +31,7 @@ class NetworkService {
   }
 
   static Map<String, String> getUploadHeaders() {
-    Map<String, String> headers = {
-      'Content-Type': 'multipart/form-data'
-    };
+    Map<String, String> headers = {'Content-Type': 'multipart/form-data'};
     return headers;
   }
 
@@ -44,7 +41,7 @@ class NetworkService {
   }
 
   /* Http Requests */
-    static Future<String?> GET(String api, Map<String, dynamic> params) async {
+  static Future<String?> GET(String api, Map<String, dynamic> params) async {
     var uri = Uri.http(getServer(), api, params); // http or https
     var response = await get(uri, headers: getHeaders());
     LogService.wtf("Api: $api;\nResponse: ${response.body}");
@@ -77,19 +74,22 @@ class NetworkService {
 
   static Future<String?> POST(String api, Map<String, dynamic> body) async {
     var uri = Uri.https(getServer(), api);
-    Response response = await post(uri, headers: getHeaders(), body: jsonEncode(body));
+    Response response =
+        await post(uri, headers: getHeaders(), body: jsonEncode(body));
     LogService.wtf("Api: $api;\nResponse: ${response.body}");
-    if(response.statusCode == 201) {
+    if (response.statusCode == 201) {
       return response.body;
     }
     return null;
   }
 
-  static Future<String?> PUT(String api, Map<String, dynamic> params, Map<String, dynamic> body) async {
+  static Future<String?> PUT(String api, Map<String, dynamic> params,
+      Map<String, dynamic> body) async {
     var uri = Uri.http(getServer(), api, params);
-    Response response = await put(uri, headers: getHeaders(), body: jsonEncode(body));
+    Response response =
+        await put(uri, headers: getHeaders(), body: jsonEncode(body));
     LogService.wtf("Api: $api;\nResponse: ${response.body}");
-    if(response.statusCode == 200) {
+    if (response.statusCode == 200) {
       return response.body;
     }
     return null;
@@ -97,15 +97,14 @@ class NetworkService {
 
   static Future<String?> PATCH(String api, Map<String, String> body) async {
     var uri = Uri.https(getServer(), api);
-    Response response = await patch(uri, headers: getHeaders(), body: jsonEncode(body));
+    Response response =
+        await patch(uri, headers: getHeaders(), body: jsonEncode(body));
     LogService.wtf("Api: $api;\nResponse: ${response.body}");
-    if(response.statusCode == 200) {
+    if (response.statusCode == 200) {
       return response.body;
     }
     return null;
   }
-
-
 
 /* Http Body */
 // static Map<String, String> bodyUpload(String subId) {
@@ -119,11 +118,11 @@ class NetworkService {
     return params;
   }
 
-    static Map<String, dynamic> paramsUser(String id) {
-      Map<String, String> params = {};
-      params.addAll({'id': id});
-      return params;
-    }
+  static Map<String, dynamic> paramsUser(String id) {
+    Map<String, String> params = {};
+    params.addAll({'id': id});
+    return params;
+  }
 
 //
 // static Map<String, dynamic> paramsSearch(String search, int pageNumber) {

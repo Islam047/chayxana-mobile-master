@@ -23,7 +23,7 @@ class RegionController extends GetxController {
     "karakalpaq".tr,
   ];
 
-   String? regionName() {
+  String? regionName() {
     update();
     return regionDto.name;
   }
@@ -34,8 +34,9 @@ class RegionController extends GetxController {
     apiGetRegion();
   }
 
-   Future<void> apiGetRegion() async {
-    var response = await NetworkService.GET(NetworkService.API_PROFILE_REGION,
+  Future<void> apiGetRegion() async {
+    var response = await NetworkService.GET(
+        NetworkService.API_PROFILE_REGION,
         NetworkService.paramsUser("3fa85f64-5717-4562-b3fc-2c963f66afa6"));
 
     if (response == null) {
@@ -48,7 +49,7 @@ class RegionController extends GetxController {
     regionDto = RegionDto.fromJson(json['object'][0]);
   }
 
-   Future<void> apiPUTRegion(String regionName) async {
+  Future<void> apiPUTRegion(String regionName) async {
     regionDto.name = regionName;
     await NetworkService.PUT(NetworkService.API_PROFILE_REGION,
         NetworkService.paramsUser('1'), regionDto.toJson());

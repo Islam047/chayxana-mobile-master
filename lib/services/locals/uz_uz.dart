@@ -60,17 +60,13 @@ const Map<String, String> uzUZ = {
   "str_price": "Narxi",
 
   // Notification page
-  "news":"Yangiliklar",
-  "message":"Xabarlar",
-  "vastok":"Vastok",
-  "tashkent":"Toshkent",
-  "yunusabad":"Yunusobod tumani, Amir Temur",
-  "working mode":"Ish tartibi",
-  "today":"Bugun 10:00 - 24:00",
-  "waiting today":"Bugun sizni kutamiz 19:00 da",
-  "waiting tomorrow":"Ertaga sizni kutamiz 19:00 da",
+
 
   // Profile page
+  "news":"Yangiliklar",
+  "message":"Xabarlar",
+  "tashkent":"Toshkent",
+  "working mode":"Ish tartibi",
   "profileCity":"Shahar",
   "personal information":"Shaxsiy ma'lumot",
   "bank card":"Bank kartasi",

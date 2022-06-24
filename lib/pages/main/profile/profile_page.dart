@@ -1,4 +1,3 @@
-
 import 'package:chayxana/pages/main/profile/profile_controller.dart';
 import 'package:chayxana/pages/main/profile/region/region_controller.dart';
 import 'package:chayxana/services/constants/app_assets.dart';
@@ -22,7 +21,6 @@ class ProfilePage extends StatelessWidget {
       delegate: RegionPage(),
     );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -103,19 +101,21 @@ class ProfilePage extends StatelessWidget {
                       children: [
                         ///location
                         InkWell(
-                            onTap: () {  _showSearch(context);},
-                            child: GetBuilder<RegionController>(
+                          onTap: () {
+                            _showSearch(context);
+                          },
+                          child: GetBuilder<RegionController>(
                               init: RegionController(),
                               builder: (regionController) {
                                 return PersonalInformation(
-
                                   whatInfo: "profileCity".tr,
                                   image: AppAssets.icLocation,
                                   additional: regionController.regionDto.name,
-                                  color: Colors.black, icon: Icons.location_on,
+                                  color: Colors.black,
+                                  icon: Icons.location_on,
                                 );
-                              }
-                            ),),
+                              }),
+                        ),
                         const Divider(
                           height: 1,
                           color: AppColors.unSelectedTextColor,
@@ -125,10 +125,11 @@ class ProfilePage extends StatelessWidget {
                         InkWell(
                           onTap: () {},
                           child: PersonalInformation(
-
                             whatInfo: "personal information".tr,
                             image: AppAssets.icEdit,
-                            additional: "", color: Colors.black, icon: Icons.edit,
+                            additional: "",
+                            color: Colors.black,
+                            icon: Icons.edit,
                           ),
                         ),
                         const Divider(
@@ -138,10 +139,11 @@ class ProfilePage extends StatelessWidget {
                         InkWell(
                           onTap: () {},
                           child: PersonalInformation(
-
                             whatInfo: "bank card".tr,
                             image: AppAssets.icBankCard,
-                            additional: "", icon: Icons.credit_card, color: Colors.black,
+                            additional: "",
+                            icon: Icons.credit_card,
+                            color: Colors.black,
                           ),
                         ),
                       ],
@@ -162,10 +164,11 @@ class ProfilePage extends StatelessWidget {
                         /// help center
                         InkWell(
                           child: PersonalInformation(
-
                             whatInfo: "support chat".tr,
                             image: AppAssets.icSupport,
-                            additional: "", color: Colors.black, icon: Icons.question_answer,
+                            additional: "",
+                            color: Colors.black,
+                            icon: Icons.question_answer,
                           ),
                         ),
                         const Divider(
@@ -173,13 +176,16 @@ class ProfilePage extends StatelessWidget {
 
                         /// question and answer
                         InkWell(
-                          onTap: () {  controller.openDialog();},
+                          onTap: () {
+                            controller.openDialog();
+                          },
                           focusColor: Colors.grey,
                           child: PersonalInformation(
-
                             whatInfo: "questions and answers".tr,
                             image: AppAssets.icQuestions,
-                            additional: "", color: Colors.black, icon: CupertinoIcons.question_circle_fill,
+                            additional: "",
+                            color: Colors.black,
+                            icon: CupertinoIcons.question_circle_fill,
                           ),
                         )
                       ],
@@ -204,10 +210,11 @@ class ProfilePage extends StatelessWidget {
                             controller.showMobileDialogue();
                           },
                           child: PersonalInformation(
-
                             whatInfo: "exit".tr,
                             image: AppAssets.icExit,
-                            additional: "", color: Colors.red, icon: Icons.exit_to_app,
+                            additional: "",
+                            color: Colors.red,
+                            icon: Icons.exit_to_app,
                           ),
                         ),
                       ],

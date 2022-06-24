@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 import 'dart:io';
 
@@ -12,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
-
   User? user;
 
   @override
@@ -23,17 +21,19 @@ class ProfileController extends GetxController {
   }
 
   void apiGetUser() async {
-      var response = await NetworkService.GET(NetworkService.API_MY_DATA, NetworkService.paramsUser("c73ebcd8-09b3-4820-b9ef-e670b7cb858f"));
+    var response = await NetworkService.GET(NetworkService.API_MY_DATA,
+        NetworkService.paramsUser("c73ebcd8-09b3-4820-b9ef-e670b7cb858f"));
 
-      if(response == null) {
-        Utils.fireSnackGetX("Something error!");
-        return;
-      }
+    if (response == null) {
+      Utils.fireSnackGetX("Something error!");
+      return;
+    }
 
-      Map<String, dynamic> json = jsonDecode(response);
-      user = User.fromJson(json["object"]);
-      update();
+    Map<String, dynamic> json = jsonDecode(response);
+    user = User.fromJson(json["object"]);
+    update();
   }
+
 // #opensBottomSheet
   Future openDialog() {
     return Get.bottomSheet(
@@ -89,6 +89,7 @@ class ProfileController extends GetxController {
       ),
     );
   }
+
 // #opensAndroidDialogue
 
   void openAndroidDialog() {
@@ -136,6 +137,7 @@ class ProfileController extends GetxController {
       ],
     ));
   }
+
 // #opensIosDialogue
 
   void openIOSDialog() {
@@ -179,7 +181,7 @@ class ProfileController extends GetxController {
     );
   }
 
-  void showMobileDialogue(){
+  void showMobileDialogue() {
     if (Platform.isAndroid) {
       return openAndroidDialog();
     } else {
