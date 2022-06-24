@@ -1,3 +1,4 @@
+import 'package:chayxana/pages/main/profile/profile_page.dart';
 import 'package:chayxana/services/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -6,28 +7,28 @@ import 'region_controller.dart';
 
 // #region_page
 class RegionPage extends SearchDelegateCustom {
+
   static const String id = "/region_page";
 
   RegionPage({Key? key})
       : super(
-          searchFieldLabel: "profileCity".tr,
-          searchFieldDecorationTheme: const InputDecorationTheme(
-            floatingLabelBehavior: FloatingLabelBehavior.always,
-          ),
-        );
+    searchFieldLabel: "profileCity".tr,
+    searchFieldDecorationTheme: const InputDecorationTheme(
+      floatingLabelBehavior: FloatingLabelBehavior.always,
+    ),
+  );
 
   // #regions
   @override
   Widget buildSuggestions(BuildContext context) {
     List<String> suggestions = RegionController().region.where(
-      (element) {
+          (element) {
         final result = element.toLowerCase();
         final input = query.toLowerCase();
         return result.contains(input);
       },
     ).toList();
     return ListView.builder(
-        physics: const BouncingScrollPhysics(),
         itemCount: suggestions.length,
         itemBuilder: (context, index) {
           final suggestion = suggestions[index];
@@ -59,10 +60,12 @@ class RegionPage extends SearchDelegateCustom {
                 ],
               ),
               onTap: () async {
+
                 query = suggestion;
 
-                await Get.find<RegionController>().apiPUTRegion(suggestion);
+                await  Get.find<RegionController>().apiPUTRegion(suggestion);
                 Navigator.pop(context);
+
               },
             ),
           );
